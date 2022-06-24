@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Marks_Class_KG</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="../../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <link href="../../assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #d4d4d4;
+      text-align: left;
+      padding: 8px;
+      font-size: 12px;
+    }
+   
+    
+    tr:nth-child(even) {
+      background-color: #e4e4e4;
+   
+    }
+    </style>
+  
+
+  <style>
+
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  </style>
+</head>
+
+<body style="background-color: rgb(236, 240, 241)">
+
+
+  <div class="header">
+    <div class="header-left">
+      <a class="logo" style="margin-left: -15px;">
+        <img src="../assets/img/ASME-VIT.png" width="35" height="35" alt=""> <span>Teacher Portal</span>
+      </a>
+    </div>
+
+    
+  
+
+
+      </div>
+
+
+      <div class="sidebar" id="sidebar" style="background-color: #fff">
+        <div class="sidebar-inner slimscroll">
+            <div id="sidebar-menu" class="sidebar-menu">
+                <ul>
+                    <li class="menu-title">Admin Panel</li>
+                   
+                    <li>
+                        <a href="../main.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                    </li>
+                    <li >
+          <a href="../Attendance/Attendance.html"><i class="fa fa-users"></i> <span>Attendance</span></a>
+        </li>
+    
+                 
+                   
+                    <li>
+                    <a href="Marks/marks.html"><i class="fa fa-book"></i> <span>Marks</span></a>
+                   </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="page-wrapper">
+    <div class="content" style="margin-top: -4vh; background-color: #fff; margin-left: 10px; margin-right: 10px; margin-top: 20px">
+    
+     
+
+    <div class="container-fluid">
+      <h3 style="text-align: center;font-weight: bold">Class KG</h3><hr>
+
+      <div class="container-fluid">
+        <button style="margin-bottom: 5px;float: left;margin-left: -15px;" onclick="history.back()" type="button" class="btn btn-secondary"><i class="fa fa-backward"></i> Back</button>
+        <button style="margin-bottom: 5px;margin-left: 5px;" type="button" class="btn btn-secondary" onclick="location.href='kg_class.html'"><i class="fa fa-spinner"></i> Refresh Page</button>
+        <button style="margin-bottom: 5px;float: right;margin-right: -15px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter" onclick="FillTboxes(null)"><i class="fa fa-plus"></i> Add Student</button>
+      </div>
+       <div class="table-responsive custom-table-responsive">
+
+ 
+            <table class="table custom-table" id="myTable" style="color: black">
+                <thead>
+                    <tr style="background-color: #5793D1;color: #fff;"> 
+                    <th style="width: 50px" scope="col">S No.</th> 
+                    <th style="width: 17vh" scope="col">Reg no.</th>
+                    <th style="width: 40vh" scope="col">Name</th>   
+                    <th style="width: 15vh" scope="col">Subject</th>
+                    <th style="width: 15vh" scope="col">Test1</th>
+                    <th style="width: 15vh" scope="col">Half Yearly</th>
+                    <th style="width: 15vh" scope="col">Test2</th>
+                    <th style="width: 15vh" scope="col">Final</th>
+                    <th style="width: 90px" scope="col">CGPA</th>
+                    <th style="width: 90px" scope="col">Status</th>
+                
+
+                    </tr>
+                </thead>
+                <tbody id="tbody1">
+                   
+
+                </tbody>
+            </table>
+        </div>
+
+
+      
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered" role="document">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h5 class="modal-title" id="exampleModalLongTitle">Marks</h5>
+       <button type="button" class="close" onclick="location.href='kg_class.html'" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+       </button>
+     </div>
+     <div class="modal-body">
+<form id="modal">
+      <div class="alert alert-success" style="display:none" id="added" role="alert">Success! Student added successfully.</div>
+      <div class="alert alert-warning" style="display:none" id="updated" role="alert">Success! Record updated successfully.</div>
+      <div class="alert alert-danger" style="display:none" id="deleted" role="alert">Success! Record deleted successfully.</div>
+
+      <div class="row">
+
+        <div class="col-md-4">
+            <label style="margin-top: 10px;color: rgb(94, 94, 94);">Registration no. :</label>
+        </div>
+        <div class="col-md-8">
+            <input type="text" id="RegMod" style="width: 100%;height: 35px;border-radius: 5px;border: 1px solid rgb(136, 136, 136);" placeholder="Enter Registration no." required>
+        </div>
+
+       </div>
+
+
+
+      <br>
+        <div class="row">
+
+              <div class="col-md-4">
+                  <label style="margin-top: 10px;color: rgb(94, 94, 94);">Name :</label>
+              </div>
+              <div class="col-md-8">
+                  <input type="text" id="NameMod" style="width: 100%;height: 35px;border-radius: 5px;border: 1px solid rgb(136, 136, 136);" placeholder="Enter Name" required>
+              </div>
+
+       </div>
+   
+       <br>
+       <div class="row">
+
+             <div class="col-md-4">
+                 <label style="margin-top: 10px;color: rgb(94, 94, 94);">Subject :</label>
+             </div>
+             <div class="col-md-8">
+              <select id="SubMod" style="width: 100%;height: 35px;border-radius: 5px;border: 1px solid rgb(136, 136, 136);">
+                <option value="English">English</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Science">Science</option>
+                <option value="SocialScience">SocialScience</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Assamese">Assamese</option>
+                <option value="Computer">Computer</option>
+         
+              </select>
+                 
+             </div>
+
+      </div>
+      
+
+
+       <br>
+       <div class="row">
+
+        <div class="col-md-4">
+            <label style="margin-top: 10px;color: rgb(94, 94, 94);">Test 1 :</label>
+        </div>
+        <div class="col-md-8">
+            <input type="text" id="Test1Mod" style="width: 100%;height: 35px;border-radius: 5px;border: 1px solid rgb(136, 136, 136);" >
+        </div>
+
+       </div>
+
+
+       <br>
+       <div class="row">
+
+        <div class="col-md-4">
+            <label style="margin-top: 10px;color: rgb(94, 94, 94);">Half Yearly :</label>
+        </div>
+        <div class="col-md-8">
+            <input type="text" id="HYMod" style="width: 100%;height: 35px;border-radius: 5px;border: 1px solid rgb(136, 136, 136);">
+        </div>
+
+       </div>
+
+
+
+       <br>
+       <div class="row">
+
+        <div class="col-md-4">
+            <label style="margin-top: 10px;color: rgb(94, 94, 94);">Test 2 :</label>
+        </div>
+        <div class="col-md-8">
+            <input type="text" id="Test2Mod" style="width: 100%;height: 35px;border-radius: 5px;border: 1px solid rgb(136, 136, 136);">
+        </div>
+
+       </div>
+
+
+       <br>
+       <div class="row">
+
+        <div class="col-md-4">
+            <label style="margin-top: 10px;color: rgb(94, 94, 94);">Final :</label>
+        </div>
+        <div class="col-md-8">
+            <input type="text" id="FinalMod" style="width: 100%;height: 35px;border-radius: 5px;border: 1px solid rgb(136, 136, 136);">
+        </div>
+
+       </div>
+
+
+       <br>
+       <div class="row">
+
+        <div class="col-md-4">
+            <label style="margin-top: 10px;color: rgb(94, 94, 94);">CGPA :</label>
+        </div>
+        <div class="col-md-8">
+            <input type="text" id="CGPAMod" style="width: 100%;height: 35px;border-radius: 5px;border: 1px solid rgb(136, 136, 136);" placeholder="Enter CGPA">
+        </div>
+
+       </div>
+
+      </form>
+    
+        
+      </div>
+      
+     </div>
+     <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" onclick="location.href='kg_class.html'">Close</button>
+      <button id="AddModBtn" type="button" class="btn btn-primary" onclick="AddStd()">Add Student</button>
+       <button id="UpdModBtn" type="button" class="btn btn-success"  onclick="UpdStd()">Update</button>
+ 
+     </div>
+   </div>
+ </div>
+
+
+
+
+
+ 
+</div>
+
+</div>
+
+
+    </div>
+</main>
+
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  <script src="../../assets/vendor/aos/aos.js"></script>
+  <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../../assets/vendor/isotope-layout/isotope.pmarks_kgd.min.js"></script>
+  <script src="../../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../../assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+
+  <script src="../../assets/js/main.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+
+
+      <script>
+
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAN02Tq8Mc2ZsdrytJ60IDI1uOW-6H0q3s",
+          authDomain: "vkvdhemaji.firebaseapp.com",
+          databaseURL: "https://vkvdhemaji-default-rtdb.firebaseio.com",
+          projectId: "vkvdhemaji",
+          storageBucket: "vkvdhemaji.appspot.com",
+          messagingSenderId: "1027968460440",
+          appId: "1:1027968460440:web:6bfb5b5d22e4bd0cf3d2ed",
+          measurementId: "G-6FC323VBL8"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      
+
+const auth=firebase.auth();
+const db=firebase.database();
+
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+  } else {
+    window.location.href = '../main.html'; 
+  }
+});
+
+
+ //GET ALL DATA
+ var stdNo;
+        function SelectAllData(){
+          document.getElementById('tbody1').innerHTML="";
+
+          stdNo=0;
+            firebase.database().ref('/Marks2022/class_KG').orderByChild('regno').once('value',
+            function(AllRecords){
+                AllRecords.forEach(
+                    function(CurrentRecord){
+           
+                       
+                        var regno = CurrentRecord.val().regno;
+                        var name = CurrentRecord.val().name;
+                        var sub = CurrentRecord.val().sub;
+                        var test1 = CurrentRecord.val().test1;
+                        var halfyearly = CurrentRecord.val().halfyearly;
+                        var test2 = CurrentRecord.val().test2;
+                        var final = CurrentRecord.val().final;
+                        var cgpa = CurrentRecord.val().cgpa;
+                        
+                        
+                        
+                        
+                        AddItemsToTable(regno,name,sub,test1,halfyearly,test2,final,cgpa);
+
+                    }
+                );
+
+            });
+        }
+
+        window.onload = SelectAllData;
+
+        //Filling the table
+        
+        var stdList = [];
+        function AddItemsToTable(regno,name,sub,test1,halfyearly,test2,final,cgpa){
+            var tbody = document.getElementById('tbody1');
+            var trow = document.createElement('tr');
+            var td0 = document.createElement('td');
+            var td1 = document.createElement('td');
+            var td2 = document.createElement('td');
+            var td3 = document.createElement('td');
+            var td4 = document.createElement('td');
+            var td5 = document.createElement('td');
+            var td6 = document.createElement('td');
+            var td7 = document.createElement('td');
+            var td8 = document.createElement('td');
+          
+         
+
+      
+
+
+          stdList.push([regno,name,sub,test1,halfyearly,test2,final,cgpa])
+     
+     
+           
+            td0.innerHTML = ++stdNo;
+            td1.innerHTML = regno;
+            td2.innerHTML = name;
+            td3.innerHTML = sub;
+            td4.innerHTML = test1;
+            td5.innerHTML = halfyearly;
+            td6.innerHTML = test2;
+            td7.innerHTML = final;
+            td8.innerHTML = cgpa;
+           
+            
+    
+     
+            trow.appendChild(td0);
+            trow.appendChild(td1); 
+            trow.appendChild(td2); 
+            trow.appendChild(td3); 
+            trow.appendChild(td4); 
+            trow.appendChild(td5);
+            trow.appendChild(td6);
+            trow.appendChild(td7);
+            trow.appendChild(td8);
+
+           
+      
+           
+           
+  
+            var ControlDiv = document.createElement("div");
+           
+            ControlDiv.innerHTML = '<button type="button" class="btn my-2 ml-2" style="height:30px;margin: 3px;color:white;margin-top:2px;font-size:12px;background-color:rgb(2, 142, 207);" data-toggle="modal" data-target="#exampleModalCenter" onclick="FillTboxes('+stdNo+')">Edit Record</button>'
+         
+            trow.appendChild(ControlDiv);
+
+            tbody.appendChild(trow);
+            
+        }
+
+       
+        var ModRegno = document.getElementById('RegMod');
+        var ModName = document.getElementById('NameMod');
+        var ModSub = document.getElementById('SubMod');  
+        var ModTest1 = document.getElementById('Test1Mod');
+        var ModHY = document.getElementById('HYMod');
+        var ModTest2 = document.getElementById('Test2Mod');
+        var ModFinal = document.getElementById('FinalMod');
+        var ModCGPA= document.getElementById('CGPAMod');
+      
+      
+        var AddModBtn = document.getElementById('AddModBtn');
+        var UpdModBtn = document.getElementById('UpdModBtn');
+        var DelModBtn = document.getElementById('DelModBtn');
+
+
+        function FillTboxes(index){
+
+          if(index==null){
+
+           
+            ModRegno.value = "";
+            ModName.value = "";
+            ModSub.value = "";
+            ModTest1.value = "";
+            ModHY.value = "";
+            ModTest2.value = "";
+            ModFinal.value = "";
+            ModCGPA.value = "";
+          
+             
+  
+           
+            ModRegno.disabled=false;
+            ModName.disabled=false;
+
+          
+              
+               AddModBtn.style.display='inline-block';
+               UpdModBtn.style.display='none';
+               DelModBtn.style.display='none';
+
+          }
+          else{
+               --index;
+         
+              
+               ModRegno.value = stdList[index][0];
+               ModName.value = stdList[index][1];
+               ModSub.value = stdList[index][2];
+               ModTest1.value = stdList[index][3];
+               ModHY.value = stdList[index][4];
+               ModTest2.value = stdList[index][5];
+               ModFinal.value = stdList[index][6];
+               ModCGPA.value = stdList[index][7];
+            
+
+
+     
+              
+               ModRegno.disabled=true;
+               ModName.disabled=true;
+               ModSub.disabled=true;
+               ModTest1.disabled=false;
+               ModHY.disabled=false;
+               ModTest2.disabled=false;
+               ModFinal.disabled=false;
+               ModCGPA.disabled=false;
+              
+          
+             
+               AddModBtn.style.display='none';
+               UpdModBtn.style.display='inline-block';
+               DelModBtn.style.display='inline-block';
+
+          }
+        }
+
+        function AddStd(){
+             
+             firebase.database().ref("/Marks2022/class_KG/" +ModRegno.value +ModSub.value).set(
+                  {
+               
+                   
+                    regno: ModRegno.value,
+                    name: ModName.value,
+                    sub: ModSub.value,
+                    test1: ModTest1.value,
+                    halfyearly: ModHY.value,
+                    test2: ModTest2.value,
+                    halfyearly: ModHY.value,
+                    final: ModFinal.value,
+                    cgpa: ModCGPA.value,
+                   
+                    
+
+                  },
+                  (error)=>{
+                       if(error){
+                            alert("Record was not added, there was some problem");
+                       }
+                       else{
+                            document.querySelector('#added').style.display = 'block';
+
+                            setTimeout(function(){
+                            document.querySelector('#added').style.display = 'none';
+                            },3000);
+
+
+                            SelectAllData();
+                   
+
+                            // Clear form
+                            document.getElementById('modal').reset();
+                                                
+                        
+
+                            
+                            
+                       }
+                  }
+             )
+        }
+
+
+
+        function UpdStd(){
+             
+             firebase.database().ref("/Marks2022/class_KG/" +ModRegno.value +ModSub.value).update(
+                  {
+         
+                   
+                    regno: ModRegno.value,
+                    name: ModName.value,
+                    sub: ModSub.value,
+                    test1: ModTest1.value,
+                    halfyearly: ModHY.value,
+                    test2: ModTest2.value,
+                    halfyearly: ModHY.value,
+                    final: ModFinal.value,
+                    cgpa: ModCGPA.value,
+                  },
+                  (error)=>{
+                       if(error){
+                            alert("Record was not updated, there was some problem");
+                       }
+                       else{
+                           
+                        document.querySelector('#updated').style.display = 'block';
+
+                        setTimeout(function(){
+                        document.querySelector('#updated').style.display = 'none';
+                        },3000);
+
+
+                        SelectAllData();
+
+
+                        // Clear form
+                        document.getElementById('modal').reset();
+                            
+                            
+                            
+                       }
+                  }
+             )
+        }
+
+
+
+
+        function DelStd(){
+             
+             firebase.database().ref("/Marks2022/class_KG/" +ModRegno.value +ModSub.value).remove().then(
+             function(){
+             
+              document.querySelector('#deleted').style.display = 'block';
+
+                        setTimeout(function(){
+                        document.querySelector('#deleted').style.display = 'none';
+                        },3000);
+
+
+                        SelectAllData();
+
+
+                        // Clear form
+                        document.getElementById('modal').reset();
+              
+             }
+             )
+        }
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>
